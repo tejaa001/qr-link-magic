@@ -3,13 +3,8 @@ import QRCode from "qrcode";
 import InputField from "./InputField";
 import QRDisplay from "./QRDisplay";
 import { useToast } from "@/components/ui/use-toast";
-import { createClient } from "@supabase/supabase-js";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+import { supabase } from "@/lib/supabase";
 
 const QRGenerator = () => {
   const [url, setUrl] = useState("");
